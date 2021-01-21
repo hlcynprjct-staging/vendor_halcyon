@@ -37,6 +37,7 @@ SOONG_CONFIG_halcyonGlobalVars += \
     needs_camera_boottime \
     needs_netd_direct_connect_rule \
     target_init_vendor_lib \
+    target_inputdispatcher_skip_event_key \
     target_ld_shim_libs \
     target_process_sdk_version_override \
     target_surfaceflinger_udfps_lib \
@@ -82,6 +83,7 @@ SOONG_CONFIG_halcyonQcomVars_uses_qcom_bsp_legacy := $(TARGET_USES_QCOM_BSP_LEGA
 BOOTLOADER_MESSAGE_OFFSET ?= 0
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS ?= 0
 TARGET_INIT_VENDOR_LIB ?= vendor_init
+TARGET_INPUTDISPATCHER_SKIP_EVENT_KEY ?= 0
 TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY ?= libcamera_parameters
 TARGET_SURFACEFLINGER_UDFPS_LIB ?= surfaceflinger_udfps_lib
 
@@ -93,6 +95,8 @@ SOONG_CONFIG_halcyonGlobalVars_target_ld_shim_libs := $(subst $(space),:,$(TARGE
 SOONG_CONFIG_halcyonGlobalVars_target_process_sdk_version_override := $(TARGET_PROCESS_SDK_VERSION_OVERRIDE)
 SOONG_CONFIG_halcyonGlobalVars_target_surfaceflinger_udfps_lib := $(TARGET_SURFACEFLINGER_UDFPS_LIB)
 SOONG_CONFIG_halcyonGlobalVars_uses_camera_parameter_lib := $(TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY)
+SOONG_CONFIG_halcyonGlobalVars_target_inputdispatcher_skip_event_key := $(TARGET_INPUTDISPATCHER_SKIP_EVENT_KEY)
+
 ifneq ($(filter $(QSSI_SUPPORTED_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
 SOONG_CONFIG_halcyonQcomVars_qcom_display_headers_namespace := vendor/qcom/opensource/commonsys-intf/display
 else
