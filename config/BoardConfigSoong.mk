@@ -39,7 +39,7 @@ SOONG_CONFIG_halcyonGlobalVars += \
     target_init_vendor_lib \
     target_ld_shim_libs \
     target_process_sdk_version_override \
-    target_surfaceflinger_fod_lib \
+    target_surfaceflinger_udfps_lib \
     uses_camera_parameter_lib
 
 SOONG_CONFIG_NAMESPACES += halcyonNvidiaVars
@@ -85,7 +85,7 @@ BOOTLOADER_MESSAGE_OFFSET ?= 0
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS ?= 0
 TARGET_INIT_VENDOR_LIB ?= vendor_init
 TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY ?= libcamera_parameters
-TARGET_SURFACEFLINGER_FOD_LIB ?= surfaceflinger_fod_lib
+TARGET_SURFACEFLINGER_UDFPS_LIB ?= surfaceflinger_udfps_lib
 
 # Soong value variables
 SOONG_CONFIG_halcyonGlobalVars_additional_gralloc_10_usage_bits := $(TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS)
