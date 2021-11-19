@@ -2,10 +2,6 @@
 PRODUCT_PACKAGES += \
     apns-conf.xml
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
 # System Applications
 PRODUCT_PACKAGES += \
     ExactCalculator \

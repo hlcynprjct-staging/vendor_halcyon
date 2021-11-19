@@ -114,3 +114,6 @@ include vendor/halcyon/config/aosp_audio.mk
 include vendor/halcyon/config/halcyon_audio.mk
 include vendor/halcyon/config/packages.mk
 include vendor/halcyon/config/version.mk
+
+# Include halcyonUI
+include vendor/halcyonui/config.mk
