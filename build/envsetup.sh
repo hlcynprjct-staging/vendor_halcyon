@@ -717,7 +717,7 @@ function halcyonrebase() {
 }
 
 function mka() {
-    m
+    m "$@"
 }
 
 function cmka() {
