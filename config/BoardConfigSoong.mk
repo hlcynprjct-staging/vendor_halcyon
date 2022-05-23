@@ -41,7 +41,8 @@ SOONG_CONFIG_halcyonGlobalVars += \
     target_ld_shim_libs \
     target_process_sdk_version_override \
     target_surfaceflinger_udfps_lib \
-    uses_camera_parameter_lib
+    uses_camera_parameter_lib \
+    uses_legacy_fd_fbdev
 
 SOONG_CONFIG_NAMESPACES += halcyonNvidiaVars
 SOONG_CONFIG_halcyonNvidiaVars += \
@@ -78,6 +79,7 @@ SOONG_CONFIG_halcyonQcomVars_supports_hw_fde := $(TARGET_HW_DISK_ENCRYPTION)
 SOONG_CONFIG_halcyonQcomVars_supports_hw_fde_perf := $(TARGET_HW_DISK_ENCRYPTION_PERF)
 SOONG_CONFIG_halcyonQcomVars_uses_pre_uplink_features_netmgrd := $(TARGET_USES_PRE_UPLINK_FEATURES_NETMGRD)
 SOONG_CONFIG_halcyonQcomVars_uses_qcom_bsp_legacy := $(TARGET_USES_QCOM_BSP_LEGACY)
+SOONG_CONFIG_halcyonGlobalVars_uses_legacy_fd_fbdev := $(TARGET_USES_LEGACY_FD_FBDEV)
 
 # Set default values
 BOOTLOADER_MESSAGE_OFFSET ?= 0
