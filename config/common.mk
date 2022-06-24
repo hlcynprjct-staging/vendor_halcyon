@@ -82,18 +82,9 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=true
 
-# Default notification/alarm sounds
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.notification_sound=Argon.ogg \
-    ro.config.alarm_alert=Hassium.ogg
-
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
-
-# Default ringtone
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.ringtone=Orion.ogg
 
 # Tethering - allow without requiring a provisioning app
 # (for devices that check this)
@@ -108,6 +99,17 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PACKAGE_OVERLAYS += vendor/halcyon/overlay/dictionaries
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/halcyon/overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/halcyon/overlay/common
+
+# Prebuilt GMS
+WITH_GMS ?= true
+ifeq ($(WITH_GMS),true)
+    $(call inherit-product-if-exists, vendor/gms/products/gms.mk)
+else
+    PRODUCT_PRODUCT_PROPERTIES += \
+        ro.config.ringtone=Orion.ogg \
+        ro.config.notification_sound=Argon.ogg \
+        ro.config.alarm_alert=Hassium.ogg
+endif
 
 # Include other common configs
 include vendor/halcyon/config/aosp_audio.mk
